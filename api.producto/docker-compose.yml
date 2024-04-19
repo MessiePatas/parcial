@@ -1,0 +1,18 @@
+version: '2.1.1'
+
+services:
+  enggadda:
+    container_name: "enggadda"
+    image: mongo:latest
+
+    ports:
+      - "27017:27017"
+  docker:
+    container_name: "docker"
+    image: docker:latest
+
+    ports:
+      - "9090:8080"
+    links:
+      - enggadda
+
